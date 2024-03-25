@@ -10,7 +10,7 @@ ob_implicit_flush();
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP) or die("Could not create socket\n");
 
 $address = 'localhost'; // Địa chỉ IP của máy chủ
-$port = 49161; // Cổng mà máy chủ đang lắng nghe
+$port = 41712; // Cổng mà máy chủ đang lắng nghe
 
 if (!socket_bind($socket, $address, $port)) {
     $error = socket_last_error($socket);
@@ -36,7 +36,6 @@ $input = socket_read($clientSocket, 2048) or die("Could not read input\n");
 
 // Xử lý dữ liệu
 $url = $_POST["url"];
-// $response = "Received URL: $url\n"; // Đây là nơi để xử lý dữ liệu nhận được
 
 // Gửi phản hồi lại cho client
 $response = socket_write($clientSocket, $url, strlen($url)) or die("Could not write output\n");
