@@ -13,8 +13,7 @@ if ($socket === false) {
     echo "socket_connect() failed: " . socket_strerror(socket_last_error($socket)) . "\n";
   } else {
     // Gửi dữ liệu tới máy chủ
-    // $message = "Hello, server!";
-    $hostname = $_POST["hostname"];
+    $message = "Hello, server!";
     socket_write($socket, $hostname, strlen($hostname));
 
     // Đọc phản hồi từ máy chủ

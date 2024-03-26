@@ -5,45 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Socket Client</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
   .container {
-    width: 500px;
+    max-width: 600px;
     margin: 0 auto;
+    padding: 20px;
   }
 
-  form {
-    margin: 50px 0;
-    text-align: center;
-  }
-
-  label {
+  button.btn-primary {
+    margin: 10px auto;
     display: block;
-    margin-bottom: 10px;
-  }
-
-  input[type="text"] {
-    width: 100%;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #45a049;
-  }
-
-  #message {
-    width: 100%;
   }
   </style>
 </head>
@@ -51,13 +28,20 @@
 <body>
   <div class="container">
     <form id="urlForm" method="post">
-      <label for="urlInput">Nhap URL:</label>
-      <input type="text" id="urlInput" name="urlInput" placeholder="https://example.com">
-      <button type="submit">Submit</button>
+      <div class="mb-3">
+        <label for="urlInput" class="form-label">Nhập URL:</label>
+        <input type="text" class="form-control" id="urlInput" name="urlInput" placeholder="https://example.com">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <textarea id="message" cols="50" rows="10" width="100"></textarea>
+    <div class="mb-3">
+      <textarea placeholder="kết quả trả về :" id="message" class="form-control" rows="10"></textarea>
+    </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+  </script>
   <script>
   document.getElementById('urlForm').addEventListener('submit', function(event) {
     event.preventDefault();
